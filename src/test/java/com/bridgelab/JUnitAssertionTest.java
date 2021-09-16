@@ -156,4 +156,20 @@ public class JUnitAssertionTest {
         Assertions.assertFalse(result);
     }
 
+    //Test for password one special character should return true
+    @Test
+    void givenPassword_WhenWithOneSpecialChara_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("Asim@1334");
+        Assertions.assertTrue(result);
+    }
+
+    //Test for password one number should return true
+    @Test
+    void givenPassword_WhenWithoutOneSpecialCharachters_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("Asima4sdf");
+        Assertions.assertFalse(result);
+    }
+
 }
