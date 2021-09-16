@@ -21,4 +21,10 @@ public class UserValidator {
         Pattern pattern = Pattern.compile(LAST_NAME_PATTERN);
         return pattern.matcher(lastName).matches();
     }
+
+    //Checking boolean Value for Email Address
+    public boolean validateEmailAddress(String email) {
+        Pattern pattern = Pattern.compile(EMAIL_ADDRESS_PATTERN);
+        return pattern.matcher(email).matches();
+    }
 }
