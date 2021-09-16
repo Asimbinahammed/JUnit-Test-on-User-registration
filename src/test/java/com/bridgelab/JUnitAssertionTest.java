@@ -124,7 +124,7 @@ public class JUnitAssertionTest {
         Assertions.assertFalse(result);
     }
 
-    //Test for one capital letter should return True
+    //Test for password one capital letter should return True
     @Test
     void givenPassword_WhenWithOneCapital_ShouldReturnTrue() {
         UserValidator validator = new UserValidator();
@@ -132,11 +132,27 @@ public class JUnitAssertionTest {
         Assertions.assertTrue(result);
     }
 
-    //Test for without capital letter should return false
+    //Test for password without capital letter should return false
     @Test
     void givenPassword_WhenWithoutOneCapital_ShouldReturnFalse() {
         UserValidator validator = new UserValidator();
         boolean result = validator.validatePassword("12345678");
+        Assertions.assertFalse(result);
+    }
+
+    //Test for password one number should return true
+    @Test
+    void givenPassword_WhenWithOneNumeric_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("Asim12334");
+        Assertions.assertTrue(result);
+    }
+
+    //Test for password one number should return true
+    @Test
+    void givenPassword_WhenWithoutOneNumeric_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("Asimasdf");
         Assertions.assertFalse(result);
     }
 

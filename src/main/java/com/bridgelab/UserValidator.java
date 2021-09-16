@@ -12,7 +12,7 @@ public class UserValidator {
     //Phone Number Regular Expression
     private static final String PHONE_NUMBER_PATTERN = "^[0-9]{2}+[\\s][0-9]{10}$";
     //Password Regular Expression
-    private static final String PASSWORD_PATTERN = "^(?=.[A-Za-z0-9])(?=.*[A-Z]).{8,}$";
+    private static final String PASSWORD_PATTERN = "^(?=.[A-Za-z0-9])(?=.*[0-9])(?=.*[A-Z]).{8,}$";
 
     //Checking boolean Value for First Name
     public boolean validateFirstName(String firstName) {
