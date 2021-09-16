@@ -68,19 +68,4 @@ public class JUnitAssertionTest {
         Assertions.assertFalse(result);
     }
 
-    //Test for Email Should Return True
-    @Test
-    void givenEmailAddress_WhenProper_ShouldReturnTrue() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.validateEmailAddress("asim123@gmail.com");
-        Assertions.assertEquals(true, result);
-    }
-
-    //Test for invalid Email
-    @Test
-    void givenEmailAddress_WhenWrong_ShouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.validateEmailAddress("abc@.com.my");
-        Assertions.assertFalse(result);
-    }
 }
