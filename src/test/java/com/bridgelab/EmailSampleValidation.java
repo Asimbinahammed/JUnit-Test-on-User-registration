@@ -9,17 +9,18 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class ValidEmailTest {
+public class EmailSampleValidation {
     private String email2Test;
     private boolean expectedResult;
 
-    public ValidEmailTest(String email, boolean expectedResult) {
+    public EmailSampleValidation(String email, boolean expectedResult) {
         this.email2Test = email;
         this.expectedResult = expectedResult;
     }
 
     @Parameterized.Parameters
     public static Collection data() {
+        //storing given email in a list
         return Arrays.asList(new Object[][]{{"abc@yahoo.com", true},
                 {"abc-100@yahoo.com", true},
                 {"abc.100@yahoo.com", true},
@@ -44,7 +45,7 @@ public class ValidEmailTest {
                 {"abc@gmail.com.aa.au", false}});
     }
 
-    @Test
+    @Test //testing email samples
     public void givenEmailAsVar_ShouldReturnAsPerTheParameterizedResult() {
         UserValidator validator = new UserValidator();
         boolean result = validator.validateEmailAddress(this.email2Test);
