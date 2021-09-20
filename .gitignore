@@ -4,5 +4,10 @@ gradle/
 gradlew*
 gradlew.bat
 settings.gradle
+<<<<<<< HEAD
 .gradle
 .idea
+=======
+.idea
+.gradle
+>>>>>>> UC13_refactoring_into_Lambda
