@@ -8,8 +8,13 @@ public class JUnitAssertionTest {
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validateFirstName("Asim");
-        Assertions.assertEquals(true, result);
+        try{
+            boolean result = validator.validateFirstName("Asim");
+        }
+        catch(UserRegistrationException e){
+            Assertions.assertEquals("Enter valid FirstName",e.getMessage());
+        }
+
     }
 
     //Name Written in LowerCase for Testing
