@@ -7,40 +7,40 @@ import org.junit.jupiter.api.Test;
 public class MoodTesting {
 
     @Test
-    public void happyTestCase() {
+    public void happyTestCase() throws UserRegistrationException {
         UserValidator validator = new UserValidator();
-        boolean resultFirstName = validator.validateFirstName("Asim");
+        boolean resultFirstName = validator.firstNameValidate("Asim");
         Assertions.assertEquals(true, resultFirstName);
 
-        boolean resultLastName = validator.validateLastName("Ahammed");
+        boolean resultLastName = validator.lastNameValidate("Ahammed");
         Assertions.assertEquals(true, resultLastName);
 
-        boolean resultEmail = validator.validateEmailAddress("asim@123.cvv");
+        boolean resultEmail = validator.emailValidator("asim@123.cvv");
         Assertions.assertEquals(true, resultEmail);
 
-        boolean resultPhoneNum = validator.validatePhoneNumber("91 9874563210");
+        boolean resultPhoneNum = validator.phoneNumberValidator("91 9874563210");
         Assertions.assertEquals(true, resultPhoneNum);
 
-        boolean resultPassword = validator.validatePassword("Asim@007");
+        boolean resultPassword = validator.passwordValidator("Asim@007");
         Assertions.assertEquals(true, resultPassword);
     }
 
     @Test
-    public void sadTestCase() {
+    public void sadTestCase() throws UserRegistrationException {
         UserValidator validator = new UserValidator();
-        boolean resultFirstName = validator.validateFirstName("Asim");
+        boolean resultFirstName = validator.firstNameValidate("Asim");
         Assertions.assertEquals(true, resultFirstName);
 
-        boolean resultLastName = validator.validateLastName("Ahammed");
+        boolean resultLastName = validator.lastNameValidate("Ahammed");
         Assertions.assertEquals(true, resultLastName);
 
-        boolean resultEmail = validator.validateEmailAddress("asim@123.cvv");
+        boolean resultEmail = validator.emailValidator("asim@123.cvv");
         Assertions.assertEquals(true, resultEmail);
 
-        boolean resultPhoneNum = validator.validatePhoneNumber("91 9874563210");
+        boolean resultPhoneNum = validator.phoneNumberValidator("91 9874563210");
         Assertions.assertEquals(true, resultPhoneNum);
 
-        boolean resultPassword = validator.validatePassword("asim@007");//missing a caps causing fail in test case
+        boolean resultPassword = validator.passwordValidator("asim@007");//missing a caps causing fail in test case
         Assertions.assertEquals(true, resultPassword);
     }
 }
