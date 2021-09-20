@@ -10,7 +10,7 @@ public class UserValidator  {
     String phoneNumber;
     String password;
 
-    //name validation
+    //first name validation
     public boolean firstNameValidate(String firstName) throws UserRegistrationException {
         String pattern = "^[A-Z][a-z]{2,}$";
 
@@ -23,6 +23,7 @@ public class UserValidator  {
         }
     }
 
+    //last name validation
     public boolean lastNameValidate(String lastName) throws UserRegistrationException {
         String pattern = "^[A-Z][a-z]{2,}$";
 
